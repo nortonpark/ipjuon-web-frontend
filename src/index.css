@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    --primary: 207 90% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 220 20% 15%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 207 90% 95%;
+    --accent-foreground: 207 90% 35%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 207 90% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 207 90% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 15%;
+    --sidebar-primary: 207 90% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 207 90% 95%;
+    --sidebar-accent-foreground: 207 90% 35%;
+    --sidebar-border: 214 25% 90%;
+    --sidebar-ring: 207 90% 45%;
+
+    /* KPI card top border colors */
+    --kpi-blue: 207 90% 54%;
+    --kpi-green: 142 71% 45%;
+    --kpi-red: 0 72% 51%;
+    --kpi-orange: 25 95% 53%;
+    --kpi-purple: 262 83% 58%;
+    --kpi-teal: 174 72% 40%;
+    --kpi-yellow: 45 93% 47%;
+
+    /* Status colors */
+    --status-complete: 142 71% 45%;
+    --status-pending: 38 92% 50%;
+    --status-error: 0 72% 51%;
+    --status-info: 207 90% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+}
+
+@layer components {
+  .page-header {
+    @apply border-l-4 border-primary pl-4 mb-6;
+  }
+
+  .page-title {
+    @apply text-xl font-bold text-foreground;
+  }
+
+  .page-description {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table thead {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .data-table th {
+    @apply px-3 py-2.5 text-left font-medium text-xs whitespace-nowrap;
+  }
+
+  .data-table td {
+    @apply px-3 py-2.5 border-b border-border whitespace-nowrap;
+  }
+
+  .data-table tbody tr:hover {
+    @apply bg-accent/50;
+  }
+
+  .kpi-card {
+    @apply bg-card rounded-lg p-4 text-center shadow-sm border border-border;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+  }
+
+  .status-complete {
+    @apply bg-[hsl(var(--status-complete)/0.1)] text-[hsl(var(--status-complete))];
+  }
+
+  .status-pending {
+    @apply bg-[hsl(var(--status-pending)/0.1)] text-[hsl(var(--status-pending))];
+  }
+
+  .status-error {
+    @apply bg-[hsl(var(--status-error)/0.1)] text-[hsl(var(--status-error))];
+  }
+
+  .quick-action-btn {
+    @apply px-4 py-2.5 bg-card border border-border rounded-lg text-sm font-medium text-foreground hover:bg-accent transition-colors;
+  }
+}
